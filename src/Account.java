@@ -1,5 +1,5 @@
 
-public class Account {
+ class Account {
 
     String owner;
     int balance, accountNumber;
@@ -40,18 +40,11 @@ public class Account {
         result += "\nAccountNumber: " + getAccountNumber();
         return result;
     }
-    // public void transfer(double amount){
-    //    if(balance >= amount){
-    //       balance -= amount;
-    ///       balance += amount;
-    //        System.out.println( "Amount has successfully been transfered!");
-    //    }
-    //   else{
-    //      System.out.println( "There is insufficient amount in the account " + accountNumber);
-    //   }
-    //   }
-    public double methodTransferEmman(double amount){
-        return balance -= amount;
+
+    public void methodTransferEmman(double amount) throws NotEnoughMoneyException{
+        if(balance >= amount){
+         balance -= amount;}
+        else{throw new NotEnoughMoneyException("There is insufficient amount in the account");}
     }
 }
 
